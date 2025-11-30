@@ -1,45 +1,79 @@
 >      # Proyecto: [Proyecto: Sistema de Control de Calidad para Aplicación de Movilidad Urbana]
 
-> - Objetivo:   Diseñé e implementé un framework integral de control de calidad para "Urban.Routes", una aplicación de reserva de transporte urbano. El proyecto abarcó pruebas de diseño, funcionalidad y experiencia de usuario, logrando una tasa de éxito del 85% en los casos de prueba ejecutados.
->
-> - 
-  ### **Metodología de Testing Implementada**
+## **Resumen Ejecutivo**
 
-- **Pruebas en multiples navegadores**: Validación en Google Chrome (800x600) y Firefox (1920x1080)
-- **Pruebas de UI/UX**: Verificación exhaustiva de elementos visuales y de usabilidad
-- **Pruebas Funcionales**: Validación de flujos completos de usuario y lógica de negocio
-- **Pruebas de Regresión**: Garantía de estabilidad en iteraciones de desarrollo
+Diseñé y ejecuté un análisis comprehensivo de calidad para dos componentes críticos de una aplicación de movilidad: el sistema de registro de licencias de conducir y el algoritmo de cálculo de tiempo y costo de viajes. El proyecto implementó técnicas avanzadas de diseño de pruebas que permitieron identificar requisitos ambiguos y validar la lógica de negocio fundamental.
 
-## **Componentes Principales del Framework de Calidad**
 
-### **1. Suite de Pruebas de Diseño y Experiencia de Usuario**
+### **Metodologías de Testing Aplicadas**
 
-- 31 casos de verificación de elementos UI/UX
-- Validación de consistencia visual entre navegadores
-- Comprobación de tipografía, alineación y esquemas de color
-- Verificación de contenido textual y numérico
+- **Análisis de Requerimientos**: Identificación de especificaciones funcionales y "zonas grises"
+- **Pruebas de Caja Negra**: Validación de funcionalidad sin conocimiento interno
+- **Técnicas de Diseño de Pruebas**: Clases de equivalencia, valores límite y diagramas de flujo
+- **Validación de Lógica de Negocio**: Verificación de algoritmos de cálculo complejos
 
-### **2. Sistema de Pruebas de Metodos de Pago**
+## **Componentes Principales del Análisis**
 
-- 30 casos específicos para flujos financieros
-- Validación de formularios de tarjetas y métodos de pago
-- Verificación de estados de botones y mensajes de error
+### **1. Mapa Mental para Función "Agregar Licencia de Conducir"**
 
-### **3. Framework de Pruebas de Lógica de Negocio**
+- **Análisis de Interfaz**: Diseño visual y elementos UI de la ventana emergente
+- **Análisis de Funcionalidad**: Comportamiento del sistema con entradas válidas e inválidas
+- **Identificación de "Zonas Grises"**: Requerimientos incompletos o ambiguos documentados
+- **Estructura Jerárquica**: Organización lógica de componentes y subcomponentes
 
-- 46 escenarios de prueba para el proceso de reserva
-- Casos positivos y negativos para resiliencia del sistema
-- Validación de integridad de datos y flujos alternativos
+### **2. Clases de Equivalencia para Campos "Nombre" y "Apellido"**
 
-### **Resultados Cuantificables**
+- **Validación de Longitud**: Rango 2-14 caracteres con casos límite
+- **Validación de Caracteres**: Letras latinas, espacios y guiones vs. caracteres no permitidos
+- **Casos Negativos**: Campos vacíos, longitud excesiva, caracteres inválidos
+- **Valores Límite**: "Jo" (2 caracteres), "AlexanderJohns" (14 caracteres)
 
-- **85% de casos de prueba aprobados** en primera iteración
-- **11 defectos críticos identificados** y documentados
-- **100% de trazabilidad** mediante integración con Jira
-- **Cobertura completa** de funcionalidades principales
+### **3. Diagrama de Flujo para Selección de Velocidad**
 
-### **Impacto en la Calidad del Producto**
+- **Lógica Basada en Horarios**: 5 intervalos temporales con velocidades específicas
+- **Toma de Decisiones**: Flujo condicional según hora de salida
+- **Velocidades Definidas**: 45 km/h (nocturno), 30 km/h (pico matutino), 40 km/h (diurno), 25 km/h (pico vespertino)
+- **Algoritmo Optimizado**: Selección automática sin intervención del usuario
 
-- Reducción de errores de validación en formularios
-- Optimización de la experiencia de usuario en flujos críticos
-- Establecimiento de baseline de calidad para desarrollos futuros
+### **4. Casos de Prueba para Cálculo de Duración y Precio**
+
+- **6 casos de prueba** para diferentes intervalos horarios
+- **Fórmulas Validadas**: T = S/V y Precio = T × precio por minuto
+- **Cobertura Completa**: Todos los rangos horarios y caso de distancia cero
+- **Resultados Esperados**: Cálculos precisos de duración (1.9-3.4 minutos) y precio ($0.19-$0.34)
+
+### **Resultados del Análisis**
+
+- **Identificación de 5 "zonas grises"** en requerimientos de licencias
+- **Definición de 16 valores de prueba** para validación de campos
+- **Coverage del 100%** de escenarios de velocidad por horario
+- **Documentación exhaustiva** de comportamientos esperados del sistema
+
+### **Hallazgos Técnicos**
+
+- **Lógica de Velocidad**: Sistema adaptativo basado en patrones de tráfico reales
+- **Validación de Entrada**: Mecanismos robustos para nombres y apellidos
+- **Cálculos Precisos**: Algoritmos que consideran múltiples variables contextuales
+- **Experiencia de Usuario**: Flujos intuitivos para registro de licencias
+
+## **Herramientas y Metodologías**
+
+### **Stack Tecnológico**
+
+- **Herramientas de Diagramación**: [draw.io](https://draw.io/) para mapas mentales y diagramas de flujo
+- **Documentación**: Google Sheets para clases de equivalencia y casos de prueba
+- **Metodologías**: Técnicas ISTQB para diseño de pruebas
+
+### **Habilidades Demostradas**
+
+- Pensamiento sistémico para análisis de requerimientos
+- Capacidad para identificar ambigüedades en especificaciones
+- Diseño de casos de prueba basados en técnicas formales
+- Visualización de procesos complejos mediante diagramas
+- Validación de algoritmos matemáticos y lógica de negocio
+- Documentación técnica clara y estructurada
+
+## **Valor Aportado**
+
+Este proyecto se establecieron los fundamentos para la validación de componentes críticos de la aplicación, asegurando que el registro de licencias de conducir fuera robusto y seguro, mientras que los cálculos de viajes fueran precisos y confiables. El análisis profundo de requerimientos y la aplicación de técnicas formales de testing permitieron identificar áreas de mejora antes de la implementación, reduciendo riesgos y costos asociados con correcciones posteriores.
+
